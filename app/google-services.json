@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "172869676525",
+    "project_id": "goalaboa-d0097",
+    "storage_bucket": "goalaboa-d0097.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172869676525:android:b73dfc356ee79998150be4",
+        "android_client_info": {
+          "package_name": "org.techtown.goalaboa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172869676525-g9v2td4qpp61dp8cg90ob3krqrnsitqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.techtown.goalaboa",
+            "certificate_hash": "f41ebe0f3b61193953de1adfcfaeaff550c7bc51"
+          }
+        },
+        {
+          "client_id": "172869676525-8h0h2s8br2fd2mft1rss9ma17nnuck31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARf_CJenvy9Q0prKS82Ehg_Al0I-sXAeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172869676525-8h0h2s8br2fd2mft1rss9ma17nnuck31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
