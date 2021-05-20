@@ -96,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 caccount.setEmailId(firebaseUser.getEmail());
                                 caccount.setPassword(strPwd);
                                 caccount.setCompany(true);
-                                mDatabaseRef.child("CUserAccount").child(firebaseUser.getUid()).setValue(caccount);
+                                mDatabaseRef.child("CompanyAccount").child(firebaseUser.getUid()).setValue(caccount);
                             } else{
                                 Log.d("Register", "라디오 버튼 에러");
                             }
