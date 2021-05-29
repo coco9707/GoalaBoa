@@ -9,6 +9,7 @@ public class UserAccount {
     private String idToken;     // Firebase Uid (고유 토큰정보)
     private String emailId;     // 이메일 아이디
     private String password;    // 비밀번호
+    private String nickname;
     private boolean person;
     //private boolean company;
 
@@ -38,6 +39,14 @@ public class UserAccount {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public boolean isPerson() {
