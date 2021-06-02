@@ -152,32 +152,25 @@ public class MainActivity extends AppCompatActivity {
     };
 
     //바텀네비 프레그먼트 교체 일어나는 실행문
-    private  void setFrag(int n) {
-
+    public void setFrag(int n) {
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
         switch(n) {
             case 0:
-                ft.replace(R.id.bottomNavigationView, frag1);
-                ft.commit();
+                ft.replace(R.id.main_frame, frag1).commit();
                 break;
             case 1:
-                ft.replace(R.id.bottomNavigationView, frag2);
-                ft.commit();
+                ft.replace(R.id.main_frame, frag2).commit();
                 break;
             case 2:
-                ft.replace(R.id.bottomNavigationView, frag3);
-                ft.commit();
+                ft.replace(R.id.main_frame, frag3).commit();
                 break;
             case 3:
-                ft.replace(R.id.bottomNavigationView, frag4);
-                ft.commit();
+                ft.replace(R.id.main_frame, frag4).commit();
                 break;
             case 4:
-                ft.replace(R.id.bottomNavigationView, frag5);
-                ft.commit();
+                ft.replace(R.id.main_frame, frag5).commit();
                 break;
-
         }
     }
 }

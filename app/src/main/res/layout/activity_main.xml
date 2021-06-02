@@ -78,6 +78,18 @@
                 android:orientation="vertical"
                 tools:context=".MainActivity">
 
+                <FrameLayout
+                    android:id="@+id/main_frame"
+                    android:layout_width="300dp"
+                    android:layout_height="600dp"
+                    app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </FrameLayout>
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottomNavigationView"
@@ -91,24 +103,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0"
-                    app:menu="@menu/bottom_menu"
-                    tools:ignore="MissingConstraints" />
-
-                <FrameLayout
-                    android:id="@+id/main_frame"
-                    android:layout_width="0dp"
-                    android:layout_height="600dp"
-                    app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-
-                </FrameLayout>
-
+                    app:menu="@menu/bottom_menu" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </LinearLayout>
 
     </LinearLayout>
