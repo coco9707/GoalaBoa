@@ -19,22 +19,22 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class Frag2 extends Fragment {
+public class Frag2_FreeBoard extends Fragment {
 
     private Button btn1;
     private Button btn2;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference freeRef = db.collection("자유게시판");
+    private CollectionReference freeRef = db.collection("Contacts");
 
     private FreeBoardAdapter madapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab_fragment3, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_freeboard, container, false);
 
-        btn1 = (Button) view.findViewById(R.id.frag3_button1); // 새로고침 버튼
-        btn2 = (Button) view.findViewById(R.id.frag3_button2); // 프로젝트 기획 버튼
+        btn1 = (Button) view.findViewById(R.id.free_up); // 맨위로 버튼
+        btn2 = (Button) view.findViewById(R.id.free_write); // 글쓰기 버튼
 
         Query query = freeRef.orderBy("mdate",Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<FreeBoardData> options = new FirestoreRecyclerOptions.Builder<FreeBoardData>()
@@ -42,7 +42,7 @@ public class Frag2 extends Fragment {
                 .build();
         madapter = new FreeBoardAdapter(options);
 
-        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.free_recycler_view);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.free_recyclerview);
         // 아이템 항목의 크기가 변경되지 않에 하려면 true
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

@@ -25,7 +25,7 @@ public class MyFreeBoard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myfreeboardactivity);
+        setContentView(R.layout.freeboard_list);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser muser = mAuth.getCurrentUser();
@@ -38,7 +38,7 @@ public class MyFreeBoard extends AppCompatActivity {
                 .build();
         adapter = new MyFreeBoardAdapter(options, this);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.myfreeboard_recyclerview);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.myfree_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

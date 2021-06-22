@@ -20,8 +20,6 @@ import android.view.MotionEvent;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private Frag1 frag1;
-    private Frag2 frag2;
+    private Frag2_FreeBoard frag2FreeBoard;
     private Frag3 frag3;
     private Frag4 frag4;
     private Frag5 frag5;
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         // FirebaseAuth 초기화
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -120,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         frag1 = new Frag1();
-        frag2 = new Frag2();
+        frag2FreeBoard = new Frag2_FreeBoard();
         frag3 = new Frag3();
         frag4 = new Frag4();
         frag5 = new Frag5();
@@ -160,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame, frag1).commit();
                 break;
             case 1:
-                ft.replace(R.id.main_frame, frag2).commit();
+                ft.replace(R.id.main_frame, frag2FreeBoard).commit();
                 break;
             case 2:
                 ft.replace(R.id.main_frame, frag3).commit();

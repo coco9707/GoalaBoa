@@ -3,7 +3,6 @@ package org.techtown.goalaboa;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,7 +28,7 @@ public class FreeBoardAdapter extends FirestoreRecyclerAdapter<FreeBoardData, Fr
     @NonNull
     @Override
     public FreeBoardHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.free_title_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.freeboard_item, parent, false);
         return new FreeBoardHolder(v);
     }
 
@@ -41,8 +40,8 @@ public class FreeBoardAdapter extends FirestoreRecyclerAdapter<FreeBoardData, Fr
         public FreeBoardHolder(View itemView){
             super(itemView);
 
-            textViewTitle = itemView.findViewById(R.id.free_view_title);
-            dateText = itemView.findViewById(R.id.free_view_date);
+            textViewTitle = itemView.findViewById(R.id.free_item_title);
+            dateText = itemView.findViewById(R.id.free_item_date);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

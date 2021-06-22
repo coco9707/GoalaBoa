@@ -33,11 +33,11 @@ public class FreeBoardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_freeboard);
+        setContentView(R.layout.freeboard_write);
 
-        titletext = findViewById(R.id.freeboard_titleText);
-        text = findViewById(R.id.freeboard_text);
-        btn1 = findViewById(R.id.freeboard_Button);
+        titletext = findViewById(R.id.free_titleText);
+        text = findViewById(R.id.free_text);
+        btn1 = findViewById(R.id.free_Button);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser muser = mAuth.getCurrentUser();
         final String email = muser.getEmail().toString();

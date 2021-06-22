@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frag2"
+    tools:context=".Frag2_FreeBoard"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,14 +14,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/frag3_button1"
+            android:id="@+id/free_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="맨위로" />
 
         <Button
-            android:id="@+id/frag3_button2"
+            android:id="@+id/free_write"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -34,7 +34,7 @@
         android:background="#ececec"
         android:layout_marginTop="45sp">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/free_recycler_view"
+            android:id="@+id/free_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>

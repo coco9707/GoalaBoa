@@ -14,17 +14,17 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/free_view_project"
+            android:id="@+id/free_item_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:text="자유 게시판"/>
         <TextView
-            android:id="@+id/free_view_title"
+            android:id="@+id/free_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/free_view_project"
+            android:layout_below="@+id/free_item_board"
 
             android:ellipsize="end"
             android:maxLines="1"
@@ -33,10 +33,10 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
-            android:id="@+id/free_view_date"
+            android:id="@+id/free_item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/free_view_title"
+            android:layout_below="@+id/free_item_title"
             android:layout_alignParentStart="true"
             android:text="날짜" />
 

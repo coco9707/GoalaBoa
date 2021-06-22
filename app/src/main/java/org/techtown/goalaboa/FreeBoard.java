@@ -44,13 +44,13 @@ public class FreeBoard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.free_board);
+        setContentView(R.layout.freeboard_contents);
 
         final Intent intent = getIntent();
-        final TextView muserid = findViewById(R.id.freeborad_id);
-        final TextView mtitle = findViewById(R.id.freeborad_title);
-        final TextView mday = findViewById(R.id.freeborad_time);
-        final TextView mpur = findViewById(R.id.freeborad_textdata);
+        final TextView muserid = findViewById(R.id.free_id);
+        final TextView mtitle = findViewById(R.id.free_title);
+        final TextView mday = findViewById(R.id.free_time);
+        final TextView mpur = findViewById(R.id.free_textdata);
 
         final String docuId = intent.getStringExtra("free_docuId");
         mAuth = FirebaseAuth.getInstance();
