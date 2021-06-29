@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/liniear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="옷" />
+
+                <TextView
+                    android:id="@+id/cp_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="글 제목"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/cp_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="id" />
+                    <TextView
+                        android:id="@+id/cp_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:text="날짜" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:paddingTop="5dp">
+                    <TextView
+                        android:id="@+id/cp_textdata"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="글내용"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cpcomment_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/liniear2">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@id/cpcomment_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cpcomment_edit_message"
+            android:layout_below="@+id/cpcomment_recyclerview"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/cpcomment_recyclerview"
+            android:id="@+id/cpcomment_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="댓글쓰기"/>
+
+    </RelativeLayout>
+</ScrollView>
