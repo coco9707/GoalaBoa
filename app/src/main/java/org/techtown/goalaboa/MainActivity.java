@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private Frag1 frag1;
-    private Frag2_FreeBoard frag2FreeBoard;
+    private Frag1_ClothesPost frag1_ClothesPost;
+    private Frag2_FreeBoard frag2_FreeBoard;
     private Frag3 frag3;
     private Frag4 frag4;
     private Frag5 frag5;
@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        frag1 = new Frag1();
-        frag2FreeBoard = new Frag2_FreeBoard();
+        frag1_ClothesPost = new Frag1_ClothesPost();
+        frag2_FreeBoard = new Frag2_FreeBoard();
         frag3 = new Frag3();
         frag4 = new Frag4();
         frag5 = new Frag5();
@@ -154,10 +154,10 @@ public class MainActivity extends AppCompatActivity {
         ft = fm.beginTransaction();
         switch(n) {
             case 0:
-                ft.replace(R.id.main_frame, frag1).commit();
+                ft.replace(R.id.main_frame, frag1_ClothesPost).commit();
                 break;
             case 1:
-                ft.replace(R.id.main_frame, frag2FreeBoard).commit();
+                ft.replace(R.id.main_frame, frag2_FreeBoard).commit();
                 break;
             case 2:
                 ft.replace(R.id.main_frame, frag3).commit();

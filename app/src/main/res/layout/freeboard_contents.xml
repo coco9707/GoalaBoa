@@ -78,20 +78,24 @@
         </androidx.recyclerview.widget.RecyclerView>
 
         <EditText
-            android:layout_margin="10dp"
-            android:layout_toLeftOf="@id/freecomment_send"
+            android:id="@+id/freecomment_edit_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/freecomment_edit_message"
-            android:layout_below="@+id/freecomment_recyclerview"/>
-        <Button
+            android:layout_below="@+id/freecomment_recyclerview"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/freecomment_recyclerview"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/freecomment_send" />
+
+        <Button
             android:id="@+id/freecomment_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="댓글쓰기"/>
+            android:layout_below="@id/freecomment_recyclerview"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:text="댓글쓰기" />
 
     </RelativeLayout>
 </ScrollView>

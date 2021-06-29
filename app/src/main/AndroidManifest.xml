@@ -16,6 +16,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".FreeBoardActivity" />
         <activity android:name=".FreeBoard" />
+        <activity android:name=".ClothesPostActivity" />
+        <activity android:name=".ClothesPost" />
 
         <activity android:name=".LoginActivity">
             <intent-filter>

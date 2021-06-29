@@ -24,7 +24,6 @@ public class FreeBoardActivity extends AppCompatActivity {
     private EditText text;
     FirebaseAuth mAuth;
 
-
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();

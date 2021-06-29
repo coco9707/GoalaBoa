@@ -46,8 +46,8 @@ public class MyFreeBoardAdapter extends FirestoreRecyclerAdapter<FreeBoardData, 
         public FreeBoardHolder(View itemView) {
             super(itemView);
 
-            textViewTitle = itemView.findViewById(R.id.free_item_title);
-            dateText = itemView.findViewById(R.id.free_item_date);
+            textViewTitle = itemView.findViewById(R.id.cp_item_title);
+            dateText = itemView.findViewById(R.id.cp_item_date);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
