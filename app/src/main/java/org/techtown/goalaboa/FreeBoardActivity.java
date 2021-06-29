@@ -27,7 +27,7 @@ public class FreeBoardActivity extends AppCompatActivity {
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    public CollectionReference freeRef = db.collection("Contacts");
+    public CollectionReference freeRef = db.collection("FreeBoard");
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -58,11 +58,11 @@ public class FreeBoardActivity extends AppCompatActivity {
             Toast.makeText(this, "내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
         }
         else {
-            FreeBoardData freeBoradData = new FreeBoardData(title, mFormat.format(day), tx, email);
-            freeRef.add(freeBoradData);
+            FreeBoardData freeBoardData = new FreeBoardData(title, mFormat.format(day), tx, email);
+            freeRef.add(freeBoardData);
 
             Toast.makeText(FreeBoardActivity.this, "글이 등록되었습니다.", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(FreeBoardActivity.this,MainActivity.class);
+            Intent intent = new Intent(FreeBoardActivity.this, MainActivity.class);
             startActivity(intent);
 
         }

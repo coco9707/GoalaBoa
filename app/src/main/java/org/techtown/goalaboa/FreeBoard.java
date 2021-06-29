@@ -3,6 +3,7 @@ package org.techtown.goalaboa;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,7 @@ public class FreeBoard extends AppCompatActivity {
     private CommentAdapter mAdapter;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference reference = db.collection("Contacts");
+    private CollectionReference reference = db.collection("FreeBoard");
 
     private static final String KEY_DATE = "mdate";
     private static final String KEY_TITLE = "mtitle";
@@ -58,19 +59,19 @@ public class FreeBoard extends AppCompatActivity {
         final String email = muser.getEmail().toString();
         final String userID = muser.getUid().toString();
 
-        Query query = db.collection("Contacts").document(docuId).collection("comment").orderBy("mdate");
+        Query query = db.collection("FreeBoard").document(docuId).collection("comment").orderBy("mdate", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<CommentData> options = new FirestoreRecyclerOptions.Builder<CommentData>()
-                .setQuery(query,CommentData.class)
+                .setQuery(query, CommentData.class)
                 .build();
-        mAdapter = new CommentAdapter(options,this);
+        mAdapter = new CommentAdapter(options, this);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.freecomment_recyclerview);
-        recyclerView.setHasFixedSize(true);
+        RecyclerView recyclerView = findViewById(R.id.freecomment_recyclerview);
+       // recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mAdapter);
 
 
-        db.collection("Contacts").document(docuId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        db.collection("FreeBoard").document(docuId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
@@ -109,13 +110,12 @@ public class FreeBoard extends AppCompatActivity {
                 Date day2 = new Date(time);
                 String text = editText.getText().toString();
                 CommentData commentData = new CommentData(userID,text,mFormat.format(day2),email);
-                db.collection("Contacts").document(docuId).collection("comment").document().set(commentData);
+                db.collection("FreeBoard").document(docuId).collection("comment").document().set(commentData);
                 finish();
+
                 overridePendingTransition(0, 0);
                 startActivity(getIntent());
                 overridePendingTransition(0, 0);
-
-
             }
         });
 
@@ -133,7 +133,7 @@ public class FreeBoard extends AppCompatActivity {
                             .setPositiveButton("삭제", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    db.collection("Contacts").document(docuId).collection("comment").document(documentSnapshot.getId()).delete();
+                                    db.collection("FreeBoard").document(docuId).collection("comment").document(documentSnapshot.getId()).delete();
                                     finish();
                                     overridePendingTransition(0, 0);
                                     startActivity(getIntent());

@@ -6,16 +6,12 @@ public class CommentData {
     private String mdate;
     private String mEmail;
 
-    public CommentData(){
-
-    }
-    public CommentData(String id,String comment,String adate,String email){
+    public CommentData(){ }
+    public CommentData(String id,String comment,String date,String email){
         this.mid = id;
         this.mcomment = comment;
-        this.mdate = adate;
+        this.mdate = date;
         this.mEmail = email;
-
-
     }
 
 

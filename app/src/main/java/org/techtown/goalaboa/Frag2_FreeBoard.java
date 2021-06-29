@@ -24,7 +24,7 @@ public class Frag2_FreeBoard extends Fragment {
     private Button btn1;
     private Button btn2;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference freeRef = db.collection("Contacts");
+    private CollectionReference freeRef = db.collection("FreeBoard");
 
     private FreeBoardAdapter madapter;
 
@@ -56,7 +56,7 @@ public class Frag2_FreeBoard extends Fragment {
                 String title = info.getMtitle();
                 String day = info.getMdate();
 
-                Intent intent = new Intent(getActivity(),FreeBoard.class);
+                Intent intent = new Intent(getActivity(), FreeBoard.class);
 
                 intent.putExtra("free_docuId",id);
                 intent.putExtra("free_title",title);

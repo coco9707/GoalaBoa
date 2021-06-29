@@ -16,7 +16,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class CommentAdapter extends FirestoreRecyclerAdapter<CommentData, CommentAdapter.MyViewHolder> {
+public class CommentAdapter extends FirestoreRecyclerAdapter<CommentData, CommentAdapter.CommentHolder> {
     private Context mContext;
     private OnItemClickListener listener;
 
@@ -26,7 +26,7 @@ public class CommentAdapter extends FirestoreRecyclerAdapter<CommentData, Commen
     }
 
     @Override
-    protected void onBindViewHolder(MyViewHolder holder, int position,@NonNull CommentData model) {
+    protected void onBindViewHolder(CommentHolder holder, int position,@NonNull CommentData model) {
         //holder.imageView.setImageDrawable(mDataset.get(position).getPicture());
         holder.textID.setText(model.getmEmail());
         holder.date.setText(model.getMdate());
@@ -34,18 +34,18 @@ public class CommentAdapter extends FirestoreRecyclerAdapter<CommentData, Commen
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommentHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.comment_item, parent, false);
-        return new MyViewHolder(view);
+        return new CommentHolder(view);
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class CommentHolder extends RecyclerView.ViewHolder {
 
         TextView textID;
         TextView comment;
         TextView date;
-        public MyViewHolder(View view) {
+        public CommentHolder(View view) {
             super(view);
             textID = view.findViewById(R.id.comment_id);
             comment = view.findViewById(R.id.comment_text);

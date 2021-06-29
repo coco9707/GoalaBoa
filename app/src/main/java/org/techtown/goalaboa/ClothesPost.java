@@ -63,10 +63,10 @@ public class ClothesPost extends AppCompatActivity{
         FirestoreRecyclerOptions<CommentData> options = new FirestoreRecyclerOptions.Builder<CommentData>()
                 .setQuery(query,CommentData.class)
                 .build();
-        mAdapter = new CommentAdapter(options,this);
+        mAdapter = new CommentAdapter(options, this);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.cpcomment_recyclerview);
-        recyclerView.setHasFixedSize(true);
+        //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mAdapter);
 

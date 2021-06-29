@@ -73,9 +73,9 @@
             android:id="@+id/cpcomment_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/liniear2"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/liniear2">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:visibility="visible"></androidx.recyclerview.widget.RecyclerView>
 
         <EditText
             android:layout_margin="10dp"
