@@ -59,7 +59,7 @@ public class ClothesPost extends AppCompatActivity{
         final String email = muser.getEmail().toString();
         final String userID = muser.getUid().toString();
 
-        Query query = db.collection("Shopping").document(docuId).collection("comment").orderBy("cdate");
+        Query query = db.collection("Shopping").document(docuId).collection("comment").orderBy("mdate");
         FirestoreRecyclerOptions<CommentData> options = new FirestoreRecyclerOptions.Builder<CommentData>()
                 .setQuery(query,CommentData.class)
                 .build();

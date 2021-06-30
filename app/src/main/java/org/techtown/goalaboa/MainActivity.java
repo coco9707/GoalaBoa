@@ -3,6 +3,7 @@ package org.techtown.goalaboa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,13 +18,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private View drawView;
+    private Button categori_outer;
+    private NavigationView nav;
 
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
@@ -63,14 +68,41 @@ public class MainActivity extends AppCompatActivity {
         // mFirebaseAuth.getCurrentUser().delete();
 
         //카테고리 네비게이션바
+        nav = findViewById(R.id.nav);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        drawView = (View)findViewById(R.id.drawer);
+        //drawView = (View)findViewById(R.id.drawer);
+       //categori_outer = findViewById(R.id.categori_outer);
 
         ImageView btn_open = (ImageView)findViewById(R.id.btn_open);
         btn_open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(drawView);
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+        nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.category_outer:
+                        Toast.makeText(MainActivity.this, "outer", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.category_pants:
+                        Toast.makeText(MainActivity.this, "pants", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.category_shoes:
+                        Toast.makeText(MainActivity.this, "shoes", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.category_top:
+                        Toast.makeText(MainActivity.this, "top", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
+                //Drawer를 닫기...
+                drawerLayout.closeDrawer(nav);
+
+                return false;
             }
         });
 
@@ -84,12 +116,16 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         drawerLayout.setDrawerListener(listener);
+
+        /*
         drawView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return true;
             }
+
         });
+    */
 
         // 바텀네비
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
