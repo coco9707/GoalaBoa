@@ -37,7 +37,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEtEmail, mEtPwd, mEtNick;      // 회원가입 입력필드
     private Button mBtnRegister;            // 회원가입 버튼
     private RadioButton mPerson, mCompany;
-    // private RadioGroup mRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

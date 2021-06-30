@@ -24,7 +24,6 @@ public class Frag1_ClothesPost extends Fragment {
     private Button btn1;
     private Button btn2;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference freeRef = db.collection("Shopping");
 
     private ClothesPostAdapter madapter;
 
@@ -36,12 +35,11 @@ public class Frag1_ClothesPost extends Fragment {
         btn1 = (Button) view.findViewById(R.id.cp_up); // 맨위로 버튼
         btn2 = (Button) view.findViewById(R.id.cp_write); // 글쓰기 버튼
 
-        Query query = freeRef.orderBy("mdate",Query.Direction.DESCENDING);
+        Query query = db.collection("Shopping").orderBy("cdate",Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<ClothesPostData> options = new FirestoreRecyclerOptions.Builder<ClothesPostData>()
                 .setQuery(query,ClothesPostData.class)
                 .build();
         madapter = new ClothesPostAdapter(options);
-
 
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.cp_recyclerview);
         // 아이템 항목의 크기가 변경되지 않에 하려면 true
@@ -54,8 +52,8 @@ public class Frag1_ClothesPost extends Fragment {
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                 ClothesPostData info = documentSnapshot.toObject(ClothesPostData.class);
                 String id = documentSnapshot.getId(); // 데이터 아이디
-                String title = info.getMtitle();
-                String day = info.getMdate();
+                String title = info.getCtitle();
+                String day = info.getCdate();
 
                 Intent intent = new Intent(getActivity(), ClothesPost.class);
 

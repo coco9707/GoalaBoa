@@ -35,10 +35,10 @@ public class ClothesPost extends AppCompatActivity{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference reference = db.collection("Shopping");
 
-    private static final String KEY_DATE = "mdate";
-    private static final String KEY_TITLE = "mtitle";
-    private static final String KEY_PURPOSE = "mtext";
-    private static final String KEY_EMAIL = "memail";
+    private static final String KEY_DATE = "cdate";
+    private static final String KEY_TITLE = "ctitle";
+    private static final String KEY_PURPOSE = "ctext";
+    private static final String KEY_EMAIL = "cemail";
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     FirebaseAuth mAuth;
 
@@ -59,7 +59,7 @@ public class ClothesPost extends AppCompatActivity{
         final String email = muser.getEmail().toString();
         final String userID = muser.getUid().toString();
 
-        Query query = db.collection("Shopping").document(docuId).collection("comment").orderBy("mdate");
+        Query query = db.collection("Shopping").document(docuId).collection("comment").orderBy("cdate");
         FirestoreRecyclerOptions<CommentData> options = new FirestoreRecyclerOptions.Builder<CommentData>()
                 .setQuery(query,CommentData.class)
                 .build();

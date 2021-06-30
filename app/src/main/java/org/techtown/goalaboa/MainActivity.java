@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction ft;
     private Frag1_ClothesPost frag1_ClothesPost;
     private Frag2_FreeBoard frag2_FreeBoard;
-    private Frag3 frag3;
+    // 테스트 후 바텀 네비 아우터를 드로워로 바꿔야함
+    private Outer frag3;
     private Frag4 frag4;
     private Frag5 frag5;
 
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         frag1_ClothesPost = new Frag1_ClothesPost();
         frag2_FreeBoard = new Frag2_FreeBoard();
-        frag3 = new Frag3();
+        frag3 = new Outer();
         frag4 = new Frag4();
         frag5 = new Frag5();
         setFrag(0);//첫 프레그먼트 화면 지정

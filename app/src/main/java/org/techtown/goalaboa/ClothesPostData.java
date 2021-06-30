@@ -8,7 +8,7 @@ public class ClothesPostData {
     private String cemail;  // 작성자 이메일
 
     //private int ccost; // 가격
-    //private int ccategory1; // 대분류 - 아우터, 상의, 하의, 신발
+    private String ccategory; // 대분류 - 아우터, 상의, 하의, 신발
     //private int ccategory2; // 하위분류
 
 
@@ -16,47 +16,54 @@ public class ClothesPostData {
     // private String csize; // 사이즈 데이터 (배열 구현)
 
     public ClothesPostData(){}
-    public ClothesPostData(String title, String date, String text, String email){
+    public ClothesPostData(String title, String date, String text, String email, String category){
         //int cost, int category1, int category2
         this.ctitle = title;
         this.cdate = date;
         this.ctext = text;
         this.cemail = email;
        // this.ccost = cost;
-        //this.ccategory1 = category1;
+        this.ccategory = category;
         //this.ccategory2 = category2;
 
     }
 
-    public String getMtitle() {
+    public String getCtitle() {
         return ctitle;
     }
 
-    public void setMtitle(String mtitle) {
-        this.ctitle = mtitle;
+    public void setCtitle(String ctitle) {
+        this.ctitle = ctitle;
     }
 
-    public String getMdate() {
+    public String getCdate() {
         return cdate;
     }
 
-    public void setMdate(String mdate) {
-        this.cdate = mdate;
+    public void setCdate(String cdate) {
+        this.cdate = cdate;
     }
 
-    public String getMtext() {
+    public String getCtext() {
         return ctext;
     }
 
-    public void setMtext(String mtext) {
-        this.ctext = mtext;
+    public void setCtext(String ctext) {
+        this.ctext = ctext;
     }
 
-    public String getMemail() {
+    public String getCemail() {
         return cemail;
     }
 
-/*
+    public String getCcategory() {
+        return ccategory;
+    }
+
+    public void setCcategory(String ccategory) {
+        this.ccategory = ccategory;
+    }
+    /*
     public int getCcost() {
         return ccost;
     }
@@ -65,13 +72,7 @@ public class ClothesPostData {
         this.ccost = ccost;
     }
 
-    public int getCcategory1() {
-        return ccategory1;
-    }
 
-    public void setCcategory1(int ccategory1) {
-        this.ccategory1 = ccategory1;
-    }
 
     public int getCcategory2() {
         return ccategory2;

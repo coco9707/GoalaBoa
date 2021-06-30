@@ -22,8 +22,8 @@ public class ClothesPostAdapter extends FirestoreRecyclerAdapter<ClothesPostData
 
     @Override
     protected void onBindViewHolder(@NonNull ClothesPostHolder holder, int position, @NonNull ClothesPostData model) {
-        holder.textViewTitle.setText(model.getMtitle());
-        holder.dateText.setText(model.getMdate());
+        holder.textViewTitle.setText(model.getCtitle());
+        holder.dateText.setText(model.getCdate());
     }
 
     @NonNull
