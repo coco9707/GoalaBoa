@@ -11,22 +11,22 @@
     <!--카테고리 네비게이션바
     전체 리니어 레이아웃
     LinearLayout height 기능을 잘 모르겠어서 임의로 설정함, 수정 필요-->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!--빨간색 부분
-        카테고리 버튼만 구현함
-        검색창은 글씨입력하면 글씨나오게 해야함: 홍드로이드 #16 다이얼로그 팝업창 참고
-        검색 버튼 눌렀을 때 검색창에 입력한 결과 값 출력-->
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FFF1F1"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/main_frame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/btn_open"
@@ -59,44 +59,32 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/main_frame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:background="#E6F6D5"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <!--하단 네비게이션바-->
+        </FrameLayout>
 
-            <FrameLayout
-                android:id="@+id/main_frame"
-                android:layout_width="match_parent"
-                android:layout_height="492dp">
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="vertical">
+            app:itemIconTint="#000000"
+            app:itemTextColor="#CAC9C9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_frame"
+            app:menu="@menu/bottom_menu" />
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                app:itemIconTint="#000000"
-                app:itemTextColor="#CAC9C9"
-                app:menu="@menu/bottom_menu" />
-        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!--초록부분
-        옷사진 나올 부분-->
-
-    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav"

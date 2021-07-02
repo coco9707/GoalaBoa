@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Frag1_ClothesPost frag1_ClothesPost;
     private Frag2_FreeBoard frag2_FreeBoard;
     // 테스트 후 바텀 네비 아우터를 드로워로 바꿔야함
-    private Outer frag3;
+    private Frag3 frag3;
     private Frag4 frag4;
     private Frag5 frag5;
 
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         // FirebaseAuth 초기화
         mFirebaseAuth = FirebaseAuth.getInstance();
 
+        // 로그아웃 버튼
         Button btn_logout = findViewById(R.id.btn_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 // 로그아웃 하기
                 mFirebaseAuth.signOut();
 
+                // Main Activity에서 Login Activity로
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Drawer 탭 카테고리 눌렀을 때
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -155,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
         frag1_ClothesPost = new Frag1_ClothesPost();
         frag2_FreeBoard = new Frag2_FreeBoard();
-        frag3 = new Outer();
+        frag3 = new Frag3();
         frag4 = new Frag4();
         frag5 = new Frag5();
         setFrag(0);//첫 프레그먼트 화면 지정
