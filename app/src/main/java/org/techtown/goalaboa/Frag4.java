@@ -38,14 +38,14 @@ public class Frag4 extends Fragment {
         outer_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getChildFragmentManager().beginTransaction().replace(R.id.child_frag, outer).addToBackStack(null).commit();
+                getFragmentManager().beginTransaction().replace(R.id.main_frame, outer).addToBackStack(null).commit();
             }
         });
 
         top_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getChildFragmentManager().beginTransaction().replace(R.id.child_frag, top).addToBackStack(null).commit();
+                getFragmentManager().beginTransaction().replace(R.id.main_frame, top).addToBackStack(null).commit();
             }
         });
 

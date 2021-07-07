@@ -86,7 +86,7 @@ public class Top extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getParentFragmentManager().beginTransaction().replace(R.id.frag_top, new Frag4()).addToBackStack(null).commit();
+                getFragmentManager().beginTransaction().replace(R.id.main_frame, new Frag4()).addToBackStack(null).commit();
             }
         });
 
