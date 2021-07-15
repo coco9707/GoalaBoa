@@ -8,23 +8,23 @@ public class ClothesPostData {
     private String cemail;  // 작성자 이메일
 
     //private int ccost; // 가격
-    private String ccategory; // 대분류 - 아우터, 상의, 하의, 신발
-    //private int ccategory2; // 하위분류
+    private String ccategory1; // 대분류 - 아우터, 상의, 하의, 신발
+    private String ccategory2; // 하위분류
 
 
     // 옷 사진 (구현)
     // private String csize; // 사이즈 데이터 (배열 구현)
 
     public ClothesPostData(){}
-    public ClothesPostData(String title, String date, String text, String email, String category){
+    public ClothesPostData(String title, String date, String text, String email, String category1, String category2){
         //int cost, int category1, int category2
         this.ctitle = title;
         this.cdate = date;
         this.ctext = text;
         this.cemail = email;
        // this.ccost = cost;
-        this.ccategory = category;
-        //this.ccategory2 = category2;
+        this.ccategory1 = category1;
+        this.ccategory2 = category2;
 
     }
 
@@ -56,30 +56,19 @@ public class ClothesPostData {
         return cemail;
     }
 
-    public String getCcategory() {
-        return ccategory;
+    public String getCcategory1() {
+        return ccategory1;
     }
 
-    public void setCcategory(String ccategory) {
-        this.ccategory = ccategory;
-    }
-    /*
-    public int getCcost() {
-        return ccost;
+    public void setCcategory1(String ccategory) {
+        this.ccategory1 = ccategory;
     }
 
-    public void setCcost(int ccost) {
-        this.ccost = ccost;
-    }
-
-
-
-    public int getCcategory2() {
+    public String getCcategory2() {
         return ccategory2;
     }
 
-    public void setCcategory2(int ccategory2) {
+    public void setCcategory2(String ccategory2) {
         this.ccategory2 = ccategory2;
     }
-*/
 }

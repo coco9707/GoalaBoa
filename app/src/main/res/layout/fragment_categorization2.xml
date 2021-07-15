@@ -2,11 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frag_top"
+    android:id="@+id/frag2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Top">
+    tools:context=".Categorization2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,21 +15,21 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/back_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="?attr/homeAsUpIndicator" />
 
         <Button
-            android:id="@+id/top_up"
+            android:id="@+id/category2_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="맨위로" />
 
         <Button
-            android:id="@+id/top_write"
+            android:id="@+id/write2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
         android:background="#ececec">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/top_recyclerview"
+            android:id="@+id/category2_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 

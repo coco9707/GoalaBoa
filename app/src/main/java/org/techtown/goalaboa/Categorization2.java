@@ -19,31 +19,39 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class Outer extends Fragment {
+public class Categorization2 extends Fragment {
 
     private Button btn1;
     private Button btn2;
     private ImageButton imageButton;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private String value1, value2, value3, value4;
 
     private ClothesPostAdapter madapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab_outer, container, false);
+        View view = inflater.inflate(R.layout.fragment_categorization2, container, false);
 
-        btn1 = (Button) view.findViewById(R.id.outer_up); // 맨위로 버튼
-        btn2 = (Button) view.findViewById(R.id.outer_write); // 글쓰기 버튼
-        imageButton = (ImageButton) view.findViewById(R.id.imageButton);
+        btn1 = (Button) view.findViewById(R.id.category2_up); // 맨위로 버튼
+        btn2 = (Button) view.findViewById(R.id.write2); // 글쓰기 버튼
+        imageButton = (ImageButton) view.findViewById(R.id.back_bt);
 
-        Query query = db.collection("Shopping").whereEqualTo("ccategory", "Outer").orderBy("cdate",Query.Direction.DESCENDING);
+        if(getArguments() != null){
+            value1 = getArguments().getString("category1");
+            value2 = getArguments().getString("field1");
+            value3 = getArguments().getString("category2");
+            value4 = getArguments().getString("field2");
+        }
+
+        Query query = db.collection("Shopping").whereEqualTo(value1, value2).whereEqualTo(value3, value4).orderBy("cdate",Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<ClothesPostData> options = new FirestoreRecyclerOptions.Builder<ClothesPostData>()
                 .setQuery(query, ClothesPostData.class)
                 .build();
         madapter = new ClothesPostAdapter(options);
 
-        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.outer_recyclerview);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.category2_recyclerview);
         // 아이템 항목의 크기가 변경되지 않에 하려면 true
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
