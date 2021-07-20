@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_category">
+        <item>아우터</item>
+        <item>상의</item>
+        <item>하의</item>
+        <item>신발</item>
+    </string-array>
+
+    <string-array name="spinner_outer">
+        <item>가디건</item>
+        <item>후드집업</item>
+        <item>자켓</item>
+        <item>코트</item>
+        <item>패딩</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="spinner_top">
+        <item>반팔티셔츠</item>
+        <item>긴팔티셔츠</item>
+        <item>셔츠</item>
+        <item>맨투맨/후드</item>
+        <item>니트</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="spinner_bottom">
+        <item>데님</item>
+        <item>슬랙스</item>
+        <item>면바지</item>
+        <item>트레이닝</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="spinner_shoes">
+        <item>스니커즈</item>
+        <item>운동화</item>
+        <item>로퍼</item>
+        <item>샌들/슬리퍼</item>
+        <item>기타</item>
+    </string-array>
+</resources>
