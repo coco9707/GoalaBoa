@@ -17,8 +17,8 @@
     </string-array>
 
     <string-array name="spinner_top">
-        <item>반팔티셔츠</item>
-        <item>긴팔티셔츠</item>
+        <item>반팔 티셔츠</item>
+        <item>긴팔 티셔츠</item>
         <item>셔츠</item>
         <item>맨투맨/후드</item>
         <item>니트</item>
